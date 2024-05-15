@@ -1,0 +1,101 @@
+programa {
+  inclua biblioteca Matematica --> mat
+  funcao inicio() {
+    //definindo variaveis
+real temperatura_em_C, temperatura_em_K, temperatura_em_F, temperatura_em_C_indicado, temperatura_em_K_indicado, temperatura_em_F_indicado, arredondar
+inteiro resposta_inicio, resposta_fim
+
+//saida de dados
+	escreva("Bem vindo ao conversor de temperaturas!\n")
+faca{	// inicio laço de repetição do sistema inteiro 
+	escreva("Selecione a opção desejada\n")
+	escreva("Digite 1 para: Celsius para Fahrenheit\n")
+	escreva("Digite 2 para: Fahrenheit para Celsius\n")
+	escreva("Digite 3 para: Celsius para Kelvin\n")
+	escreva("Digite 4 para: Kelvin para Celsius\n")
+	escreva("Digite 5 para: Fahrenheit para Kelvin\n")
+	escreva("Digite 6 para: Kelvin para Fahrenheit\n\n")
+	escreva("Selecione a opção desejada:")
+faca{	//inicio laço de repetição da entrada de dados
+	leia(resposta_inicio)
+	se(resposta_inicio <1 ou resposta_inicio >6){
+	escreva("Opção invávida! Digite novamente uma opção disponível \n")
+	escreva("Selecione a opção desejada: ")
+	}
+}enquanto(resposta_inicio < 1 ou resposta_inicio >6)//fim do laço de repetição da entrada de dados
+
+//condicional da segunda entrada de dados e da parte lógica 
+	se(resposta_inicio == 1){// celsius para Fahrenheit
+	
+		escreva("Digite a temperatura, em celsius, desejada: ")
+		leia(temperatura_em_C_indicado)//entrada de dados
+
+		 temperatura_em_F = (temperatura_em_C_indicado * 1.8) + 32//cálculos
+		arredondar = mat.arredondar(temperatura_em_F, 2)//arredondamento
+
+		escreva(temperatura_em_C_indicado, "°C é igual a ", arredondar, "°1F")//saída de dados
+
+	}senao se(resposta_inicio == 2){//Fahrenheit pra celsius
+
+		escreva("Digite a temperatura, em fahrenheit, desejada: ")
+		leia(temperatura_em_F_indicado)
+
+		temperatura_em_C = (temperatura_em_F_indicado - 32) * 5/9 
+		arredondar = mat.arredondar(temperatura_em_C, 2)
+
+		escreva(temperatura_em_F_indicado, "°F é igual a ", arredondar, "°C")
+
+	
+	}senao se(resposta_inicio == 3){//celsius para kelvin
+ 
+
+		escreva("Digite a temperatura, em ceusius, desejada: ")
+		leia(temperatura_em_C_indicado)
+
+		temperatura_em_K = temperatura_em_C_indicado + 273.15 
+		arredondar = mat.arredondar(temperatura_em_K, 2)
+
+		  escreva(temperatura_em_C_indicado, "°C é igual a ", arredondar, "K")
+
+	}senao se(resposta_inicio == 4){//kelvin para celsius
+
+		 escreva("Digite a temperatura, em kelvin, deseqjada: ")
+		 leia(temperatura_em_K_indicado)
+
+		temperatura_em_C = temperatura_em_K_indicado - 273.15
+		arredondar = mat.arredondar(temperatura_em_C, 2) 
+
+		escreva(temperatura_em_K_indicado, "K é igual a ", arredondar, "°C")
+
+	}senao se(resposta_inicio == 5){//Fahrenheit para kelvin
+
+		escreva("Digite a temperatura, em Fahrenheit, desejada: ")
+		leia(temperatura_em_F_indicado)
+
+		temperatura_em_K = (temperatura_em_F_indicado - 32) * 5/9 + 273.15 
+		arredondar = mat.arredondar(temperatura_em_K, 2)
+
+		escreva(temperatura_em_F_indicado, "°F é igual a  ", arredondar, "K")
+
+	}senao se(resposta_inicio == 6) {//kelvin para Fahrenheit
+		escreva("Digite a temperatura, em kelvin, desejada: ")
+		leia(temperatura_em_K_indicado)
+
+		temperatura_em_F = (temperatura_em_K_indicado - 273.15) * 1.8 + 32 
+		arredondar = mat.arredondar(temperatura_em_F, 2)
+
+		escreva(temperatura_em_K_indicado, "K é igual a ", arredondar, "°F")
+  
+		}
+		//pergunta se quer realizar novamente o programa
+	escreva("\nDeseja fazer mais alguma conversão?\n")	
+	escreva("(1) para sim\n")
+	escreva("(2) para não\n")
+	escreva("Digite aqui a opção desejada: ")
+	leia(resposta_fim)
+	}enquanto(resposta_fim ==1)// fim do laço de repetição do sistema inteiro
+}
+
+
+  }
+}
