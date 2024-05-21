@@ -1,0 +1,40 @@
+programa {
+  /*Criar um programa que pergunte o nome e a idade da pessoa, e se tem comorbidade (S ou N). Mostrar mensagem 
+  "Pode se vacinar!" caso a idade seja maior ou igual a 60 ou tenha comorbidade. Caso contrário, mostrar mensagem 
+  "Não pode se vacinar!".  */
+  funcao inicio() {
+  	
+  	
+  cadeia respostaComorbidade, nomePessoa
+  inteiro numeroidade, idadeLimite = 60
+
+  escreva("Digite seu nome:")
+    leia(nomePessoa)
+faca{
+	escreva("Digite sua idade: ")
+    leia(numeroidade)
+	
+	se(numeroidade < 1){
+		escreva("Resposta inválida!\n")
+	}
+	}enquanto(numeroidade < 1)
+		
+	faca{
+    escreva("Responda se você tem comorbidades \nDigite (N) para não e (S) para sim: ")
+    leia(respostaComorbidade)
+	
+	se(respostaComorbidade != "N" e respostaComorbidade != "S" e respostaComorbidade != "s" e respostaComorbidade != "n"){
+		escreva("Resposta inválida!\n")
+	}
+		}enquanto(respostaComorbidade != "N" e respostaComorbidade != "S" e respostaComorbidade != "s" e respostaComorbidade != "n")
+	
+	
+	se(numeroidade >= idadeLimite ou respostaComorbidade == "S" ou respostaComorbidade == "s"){
+		
+		escreva(nomePessoa, " pode se vacinar!")
+		
+	}senao{
+		escreva(nomePessoa, " não pode se vacinar!")
+	} 
+  }
+}
