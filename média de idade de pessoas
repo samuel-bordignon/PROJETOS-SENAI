@@ -1,0 +1,21 @@
+programa {
+  /* Desenvolva um programa no qual o usuário deve digitar o nome e a idade de 5 pessoas. Ao final mostrar a média de 
+  idade delas e a maior idade dentre essas pessoas. (DESAFIO: Mostrar também o nome da pessoa com a maior idade). */
+  funcao inicio() {
+
+    inteiro idadePessoas [5], total = 0, i
+    real mediaIdade
+
+para(i=0; i<5; i++) {
+
+  escreva("Digite a idade da ", i+1, "° pessoa: ")
+  leia(idadePessoas[i])
+  total = total + idadePessoas[i]
+ }
+ // cálculos
+mediaIdade = total / 5
+
+escreva("A idade média das pessoas é: ", mediaIdade)
+    
+  }
+}
