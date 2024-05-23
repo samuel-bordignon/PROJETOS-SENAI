@@ -1,0 +1,57 @@
+programa {
+  /* Faça um programa do qual o usuário digite quatro números e ao final mostre o maior número, o menor número, e a soma dos outros dois 
+  números (que não são o maior nem o menor). (DESAFIO: Caso existam números repetidos digitados, após o usuário digitar os quatro números, 
+  não mostrar maior, menor nem soma, mas uma mensagem "Você digitou números repetidos".) */
+  funcao inicio() {
+
+    inteiro numeros[4], i, numeroMax =0, numeroMin, somaNumeros, j
+    logico repetido = falso
+
+    para(i = 0; i <4; i++){
+      escreva("Digite o °", i +1 ," número: " )
+      leia(numeros[i])
+    }
+
+    para(i=0; i<4; i++){
+     	para(j=i+1; j<4; j++){
+
+	 		  se(numeros[i] == numeros[j]){
+	 			  repetido =verdadeiro 
+	 			  pare
+	 		}
+	 		se(repetido){
+        pare
+       }
+      }
+     }
+
+     se(repetido){
+
+      escreva("Você digitou dois ou mais números iguais. Resposta inválida!")
+      
+      }senao{
+      numeroMin = numeros[0]
+      para(i = 0; i <4; i++){
+        se(numeros[i] < numeroMin){
+          numeroMin = numeros[i]
+        }
+      }
+      para(i = 0; i <4; i++){
+        se(numeros[i] > numeroMax){
+          numeroMax = numeros[i]
+        }
+      }
+      somaNumeros = 0
+      para(i = 0; i <4; i++){
+        se(numeroMax != numeros[i] e numeroMin != numeros[i] ) {
+          somaNumeros = somaNumeros + numeros[i]
+        }
+      }
+
+      escreva("O maior é número: ", numeroMax,"\n")
+      escreva("O menor é número: ", numeroMin, "\n")
+      escreva("A soma dos dois outros números é: ", somaNumeros, "\n")
+     }
+       
+      }
+   }
