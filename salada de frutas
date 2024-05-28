@@ -1,0 +1,15 @@
+programa {
+  /*1) Fazer um programa no qual o usuário deve montar uma salada de frutas com uma cereja no final. Deve ser perguntado em sequência “Qual fruta adicionar?
+   “. Quando for adicionado a cereja, mostrar a frase “Sua salada de frutas está pronta!” */
+  funcao inicio() {
+    cadeia frutaDigitada = " "
+
+    enquanto(frutaDigitada != "cereja"){
+
+      escreva("Qual fruta adicionar? ")
+      leia(frutaDigitada)
+    }
+    escreva("Sua salada de frutas está pronta! ")
+    
+  }
+}
